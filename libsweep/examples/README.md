@@ -2,7 +2,7 @@
 
 Examples for the `libsweep` library.
 
-Requires `libsweep.so` to be installed.
+Requires `libsweep.dll` to be installed. This should be installed somewhere on the user environment variable "PATH". `libsweep.dll` could be placed (installed) in `"C:\MinGW\bin"` for example.
 This can be either the dummy library always returning static point cloud data or the device library requiring the Scanse Sweep device to be plugged in.
 
 ### Quick Start
@@ -13,18 +13,18 @@ To build:
     # build the examples
     mkdir build
     cd build
-    cmake ..
-    cmake --build .
+    # generate the make file (assumes you are using MSYS terminal for MinGW)
+    cmake -G "MSYS Makefiles" .. 
+    # run the makefile
+    make
 ```
 
-**Note:** the viewer requires SFML2 to be installed.
+**Note:** running the example requires the `libsweep.dll` be installed (ex: `C:\MinGW\bin`), or at least placed in the same directory as the executable (`examples\build`).
 
 
 ```bash
-    # run the examples
+    # run the example
     ./example-c
-    ./example-c++
-    ./example-viewer
 ```
 
 ### License

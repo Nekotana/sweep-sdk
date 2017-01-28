@@ -105,7 +105,7 @@ sweep_scan_s sweep_device_get_scan(sweep_device_s device, sweep_error_s* error) 
 
   device->nth_scan_request += 1;
 
-  sweep_sleep_microseconds(0.1 /*second*/ * 1000 * 1000);
+  sweep_sleep_milliseconds(0.1 /*second*/ * 1000);
 
   return out;
 }

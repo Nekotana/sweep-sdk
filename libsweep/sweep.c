@@ -148,7 +148,7 @@ void sweep_device_stop_scanning(sweep_device_s device, sweep_error_s* error) {
     return;
   }
 
-  sweep_sleep_microseconds(5000);
+  sweep_sleep_milliseconds(5);
 
   sweep_serial_error_s serialerror = NULL;
   sweep_serial_device_flush(device->serial, &serialerror);

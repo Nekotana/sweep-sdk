@@ -4,15 +4,32 @@ Low-level Scanse Sweep LiDAR library. Comes as C99 library `sweep.h` with option
 
 ### Quick Start
 
-    make
-    sudo make install
+On linux:
 
-If you don't have a Sweep device yet you can build a dummy `libsweep.so` always returning static point cloud data:
+```bash
+# build the library (creates libsweep.so)
+make
+# install the library (puts libsweep.so in usr/lib)
+sudo make install
+```
 
-    make dummy
-    sudo make install
+If you don't have a Sweep device yet you can build a dummy `libsweep.so` always returning static point cloud data. This dummy library is API and ABI compatible. Once your device arrives switch out the `libsweep.so` shared library and you're good to go.
 
-This dummy library is API and ABI compatible. Once your device arrives switch out the `libsweep.so` shared library and you're good to go.
+```bash
+make dummy
+sudo make install
+```
+
+
+If you're building on windows, install MinGW and MSYS. Following MinGW installation instructions for setting environment variables etc. Then, from the MSYS terminal, you can run:
+
+```bash
+# build the library (creates libsweep.dll)
+make
+# puts libsweep.dll in "C:\MinGW\bin"
+make install
+```
+
 
 ### Usage
 
@@ -21,9 +38,10 @@ This dummy library is API and ABI compatible. Once your device arrives switch ou
 
 For example:
 
-    gcc -Wall -Wextra -pedantic -std=c99 examples/example.c -lsweep
-    g++ -Wall -Wextra -pedantic -std=c++11 examples/example.cc -lsweep
-
+```bash
+gcc -Wall -Wextra -pedantic -std=c99 examples/example.c -lsweep
+g++ -Wall -Wextra -pedantic -std=c++11 examples/example.cc -lsweep
+```
 See [example.c](examples/example.c) and [example.cc](examples/example.cc) for a C and C++ example, respectively.
 
 

@@ -9,8 +9,14 @@ find_path(LIBSWEEP_INCLUDE_DIR
           sweep/sweep.h sweep/sweep.hpp)
 
 find_library(LIBSWEEP_LIBRARY
-             NAMES sweep
+             NAMES libsweep
              HINTS "${LIBSWEEP_LIBRARY_DIR}")
+
+
+#MESSAGE( STATUS "LIBSWEEP_INCLUDE_DIR:      " ${LIBSWEEP_INCLUDE_DIR} )
+#MESSAGE( STATUS "LIBSWEEP_LIBRARY_DIR:      " ${LIBSWEEP_LIBRARY_DIR} )
+#MESSAGE( STATUS "LIBSWEEP_LIBRARY:      " ${LIBSWEEP_LIBRARY} )
+
 
 include(FindPackageHandleStandardArgs)
 find_package_handle_standard_args(Sweep DEFAULT_MSG LIBSWEEP_LIBRARY LIBSWEEP_INCLUDE_DIR)
