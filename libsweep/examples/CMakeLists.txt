@@ -9,9 +9,10 @@ list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/../cmake")
 #find_package(Threads REQUIRED)
 find_package(Sweep REQUIRED)
 
-#add_executable(example-c++ example.cc)
+add_executable(example-c++ example.cc)
 #target_link_libraries(example-c++ PRIVATE ${LIBSWEEP_LIBRARY} ${CMAKE_THREAD_LIBS_INIT})
-#target_include_directories(example-c++ SYSTEM PRIVATE ${LIBSWEEP_INCLUDE_DIR})
+target_link_libraries(example-c++ PRIVATE ${LIBSWEEP_LIBRARY})
+target_include_directories(example-c++ SYSTEM PRIVATE ${LIBSWEEP_INCLUDE_DIR})
 
 add_executable(example-c example.c)
 #target_link_libraries(example-c PRIVATE ${LIBSWEEP_LIBRARY} ${CMAKE_THREAD_LIBS_INIT})

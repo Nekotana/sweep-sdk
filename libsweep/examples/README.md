@@ -23,8 +23,10 @@ To build:
 
 
 ```bash
-    # run the example
+    # run the c example
     ./example-c
+    # run the c++ example
+    ./example-c++
 ```
 
 ### License

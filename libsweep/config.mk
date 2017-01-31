@@ -17,7 +17,7 @@ else ifeq ($(UNAME), MINGW32_NT-6.2)
   # For win platforms using MinGW
   PREFIX ?= C:\MinGW
   CC = gcc
-  CFLAGS += -O2 -Wall -Wextra -pedantic -std=c99 -Wnonnull -fvisibility=hidden -fPIC -pthread
+  CFLAGS += -O2 -Wall -Wextra -pedantic -std=c99 -Wnonnull -fvisibility=hidden -fPIC -mno-ms-bitfields
   LDFLAGS += -shared -Wl,-soname,libsweep.dll.$(VERSION_MAJOR)
   #$(error $(UNAME) not yet supported)
 else
